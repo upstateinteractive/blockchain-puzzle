@@ -26,7 +26,11 @@ contract DougToken {
     address public owner;
     uint _totalSupply = 1000;
 
+    // Owner of account approves the transfer of an amount to another account
+    mapping(address => mapping (address => uint256)) allowed;
+    
     event Transfer(address indexed from, address indexed to, uint tokens);
+    event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
 
     function DougToken(uint _totalSupply) public {
         owner = msg.sender;
@@ -48,5 +52,20 @@ contract DougToken {
         Transfer(msg.sender, to, tokens);
         return true;
     }
+
+    function transferFrom(address from, address to, uint tokens) public returns (bool success) {
+        balances[from] = balances[from].sub(tokens);
+        allowed[from][msg.sender] = allowed[from][msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        Transfer(from, to, tokens);
+        return true; 
+   }
+
+   function approve(address spender, uint tokens) public returns (bool success) {
+        allowed[msg.sender][spender] = tokens;
+        Approval(msg.sender, spender, tokens);
+        return true;
+    }
+
 }
 
