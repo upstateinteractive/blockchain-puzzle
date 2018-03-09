@@ -10,14 +10,15 @@ contract UserFactory {
 
     mapping(address => uint) public userLevel; 
 
-    function assignLevel(uint _level) public {
-	userLevel[msg.sender] = _level;
-        uint id = users.push(User(_level)) -1;
+    function assignLevel() public {
+	uint level = 1;
+	userLevel[msg.sender] = level;
+        uint id = users.push(User(level)) -1;
     }
 
-//    function incrementLevel {
-//	userLevel[msg.sender]++;
-//    }
+    function incrementLevel() public {
+	userLevel[msg.sender]++;
+    }
 
     function findLevel(address userAddress) public constant returns (uint) {
 	return userLevel[userAddress];
