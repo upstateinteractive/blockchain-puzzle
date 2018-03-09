@@ -1,0 +1,104 @@
+{
+  "contractName": "Puzzles",
+  "abi": [],
+  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a723058202495b77b4eb523f0143ebc1f404c1495ac2e9331b5a682602c66228e9664f9280029",
+  "deployedBytecode": "0x6060604052600080fd00a165627a7a723058202495b77b4eb523f0143ebc1f404c1495ac2e9331b5a682602c66228e9664f9280029",
+  "sourceMap": "26:90:0:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "26:90:0:-;;;;;",
+  "source": "pragma solidity ^0.4.17;\n\ncontract Puzzles { \n    \n//    function levelOne() returns (bool success) {\n//\t\n//    }\n\n}\n",
+  "sourcePath": "/home/ubuntu/blockchain-tutorial/contracts/Puzzles.sol",
+  "ast": {
+    "absolutePath": "/home/ubuntu/blockchain-tutorial/contracts/Puzzles.sol",
+    "exportedSymbols": {
+      "Puzzles": [
+        2
+      ]
+    },
+    "id": 3,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2,
+        "linearizedBaseContracts": [
+          2
+        ],
+        "name": "Puzzles",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3,
+        "src": "26:90:0"
+      }
+    ],
+    "src": "0:117:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/ubuntu/blockchain-tutorial/contracts/Puzzles.sol",
+    "exportedSymbols": {
+      "Puzzles": [
+        2
+      ]
+    },
+    "id": 3,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2,
+        "linearizedBaseContracts": [
+          2
+        ],
+        "name": "Puzzles",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3,
+        "src": "26:90:0"
+      }
+    ],
+    "src": "0:117:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {
+    "1520628048112": {
+      "events": {},
+      "links": {},
+      "address": "0xb5be520467d2a0601fe7b5f7232c5872b35695b3",
+      "transactionHash": "0x07e4b073f2c433ae46992f1732f933c2593c3d46b8347c46055db8fea13dcbba"
+    }
+  },
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-03-09T21:36:57.843Z"
+}

@@ -15,9 +15,9 @@ contract UserFactory {
         uint id = users.push(User(_level)) -1;
     }
 
-    function incrementLevel {
-	userLevel[msg.sender]++;
-    }
+//    function incrementLevel {
+//	userLevel[msg.sender]++;
+//    }
 
     function findLevel(address userAddress) public constant returns (uint) {
 	return userLevel[userAddress];
