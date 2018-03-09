@@ -1,5 +1,5 @@
 var OasisToken = artifacts.require("./OasisToken.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(OasisToken, 100);
+  deployer.deploy(OasisToken, 10000);
 };
