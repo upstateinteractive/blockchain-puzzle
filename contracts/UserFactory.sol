@@ -1,5 +1,7 @@
 pragma solidity ^0.4.17;
 
+import "./Puzzles.sol";
+
 contract UserFactory {  
 
     struct User{

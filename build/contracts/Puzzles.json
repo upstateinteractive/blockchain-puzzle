@@ -1,20 +1,40 @@
 {
   "contractName": "Puzzles",
-  "abi": [],
-  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a723058202495b77b4eb523f0143ebc1f404c1495ac2e9331b5a682602c66228e9664f9280029",
-  "deployedBytecode": "0x6060604052600080fd00a165627a7a723058202495b77b4eb523f0143ebc1f404c1495ac2e9331b5a682602c66228e9664f9280029",
-  "sourceMap": "26:90:0:-;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "26:90:0:-;;;;;",
-  "source": "pragma solidity ^0.4.17;\n\ncontract Puzzles { \n    \n//    function levelOne() returns (bool success) {\n//\t\n//    }\n\n}\n",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "answer",
+          "type": "uint256"
+        }
+      ],
+      "name": "levelOne",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6060604052732625a063ed7c07153ddc020b338dc4b5bed7a37d6000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555034156100c557600080fd5b61015b806100d46000396000f300606060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806337c40f4e14610046575b600080fd5b341561005157600080fd5b6100676004808035906020019091905050610081565b604051808215151515815260200191505060405180910390f35b6000600182141561012657600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16635d34b4e06040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401600060405180830381600087803b151561011157600080fd5b6102c65a03f1151561012257600080fd5b5050505b600190509190505600a165627a7a72305820d8efc203e7da22431eddd25d99fced805b63d5f6d768235de014ad8e67b1f8560029",
+  "deployedBytecode": "0x606060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806337c40f4e14610046575b600080fd5b341561005157600080fd5b6100676004808035906020019091905050610081565b604051808215151515815260200191505060405180910390f35b6000600182141561012657600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16635d34b4e06040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401600060405180830381600087803b151561011157600080fd5b6102c65a03f1151561012257600080fd5b5050505b600190509190505600a165627a7a72305820d8efc203e7da22431eddd25d99fced805b63d5f6d768235de014ad8e67b1f8560029",
+  "sourceMap": "55:299:0:-;;;108:42;79:71;;;;;;;;;;;;;;;;;;;;191:18;;;;;;;;;;;160:50;;;;;;;;;;;;;;;;;;;;55:299;;;;;;;;;;;;;;",
+  "deployedSourceMap": "55:299:0:-;;;;;;;;;;;;;;;;;;;;;;;;217:134;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;264:12;296:1;286:6;:11;283:42;;;304:4;;;;;;;;;;;:19;;;:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;283:42;339:4;332:11;;217:134;;;:::o",
+  "source": "pragma solidity ^0.4.17;\n\nimport \"./UserFactory.sol\";\n\ncontract Puzzles { \n    address UserFactoryAddress = 0x2625a063ed7c07153ddc020b338dc4b5bed7a37d;   \n\n    UserFactory user = UserFactory(UserFactoryAddress);\n\n    function levelOne(uint answer) public returns (bool success) {\n\t\n\tif(answer == 1)\n\t    user.incrementLevel();\n\t    return true;\t\n    }\n\n}\n",
   "sourcePath": "/home/ubuntu/blockchain-tutorial/contracts/Puzzles.sol",
   "ast": {
     "absolutePath": "/home/ubuntu/blockchain-tutorial/contracts/Puzzles.sol",
     "exportedSymbols": {
       "Puzzles": [
-        2
+        30
       ]
     },
-    "id": 3,
+    "id": 31,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -29,32 +49,382 @@
         "src": "0:24:0"
       },
       {
+        "absolutePath": "/home/ubuntu/blockchain-tutorial/contracts/UserFactory.sol",
+        "file": "./UserFactory.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 31,
+        "sourceUnit": 93,
+        "src": "26:27:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 2,
+        "id": 30,
         "linearizedBaseContracts": [
-          2
+          30
         ],
         "name": "Puzzles",
         "nodeType": "ContractDefinition",
-        "nodes": [],
-        "scope": 3,
-        "src": "26:90:0"
+        "nodes": [
+          {
+            "constant": false,
+            "id": 5,
+            "name": "UserFactoryAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 30,
+            "src": "79:71:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 3,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "79:7:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "307832363235613036336564376330373135336464633032306233333864633462356265643761333764",
+              "id": 4,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "108:42:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_217780748833025965260754209426581162716602803069_by_1",
+                "typeString": "int_const 217780748833025965260754209426581162716602803069"
+              },
+              "value": "0x2625a063ed7c07153ddc020b338dc4b5bed7a37d"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 10,
+            "name": "user",
+            "nodeType": "VariableDeclaration",
+            "scope": 30,
+            "src": "160:50:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_UserFactory_$92",
+              "typeString": "contract UserFactory"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 6,
+              "name": "UserFactory",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 92,
+              "src": "160:11:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UserFactory_$92",
+                "typeString": "contract UserFactory"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "id": 8,
+                  "name": "UserFactoryAddress",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 5,
+                  "src": "191:18:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                ],
+                "id": 7,
+                "name": "UserFactory",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 92,
+                "src": "179:11:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_contract$_UserFactory_$92_$",
+                  "typeString": "type(contract UserFactory)"
+                }
+              },
+              "id": 9,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": false,
+              "kind": "typeConversion",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "179:31:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UserFactory_$92",
+                "typeString": "contract UserFactory"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 28,
+              "nodeType": "Block",
+              "src": "278:73:0",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 19,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 17,
+                      "name": "answer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12,
+                      "src": "286:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 18,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "296:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "286:11:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 25,
+                  "nodeType": "IfStatement",
+                  "src": "283:42:0",
+                  "trueBody": {
+                    "expression": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 20,
+                          "name": "user",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10,
+                          "src": "304:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_UserFactory_$92",
+                            "typeString": "contract UserFactory"
+                          }
+                        },
+                        "id": 22,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "incrementLevel",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 79,
+                        "src": "304:19:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
+                          "typeString": "function () external"
+                        }
+                      },
+                      "id": 23,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "304:21:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$__$",
+                        "typeString": "tuple()"
+                      }
+                    },
+                    "id": 24,
+                    "nodeType": "ExpressionStatement",
+                    "src": "304:21:0"
+                  }
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 26,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "339:4:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 16,
+                  "id": 27,
+                  "nodeType": "Return",
+                  "src": "332:11:0"
+                }
+              ]
+            },
+            "id": 29,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "levelOne",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12,
+                  "name": "answer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "235:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "235:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "234:13:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "264:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 14,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "264:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "263:14:0"
+            },
+            "scope": 30,
+            "src": "217:134:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 31,
+        "src": "55:299:0"
       }
     ],
-    "src": "0:117:0"
+    "src": "0:355:0"
   },
   "legacyAST": {
     "absolutePath": "/home/ubuntu/blockchain-tutorial/contracts/Puzzles.sol",
     "exportedSymbols": {
       "Puzzles": [
-        2
+        30
       ]
     },
-    "id": 3,
+    "id": 31,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -69,23 +439,373 @@
         "src": "0:24:0"
       },
       {
+        "absolutePath": "/home/ubuntu/blockchain-tutorial/contracts/UserFactory.sol",
+        "file": "./UserFactory.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 31,
+        "sourceUnit": 93,
+        "src": "26:27:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 2,
+        "id": 30,
         "linearizedBaseContracts": [
-          2
+          30
         ],
         "name": "Puzzles",
         "nodeType": "ContractDefinition",
-        "nodes": [],
-        "scope": 3,
-        "src": "26:90:0"
+        "nodes": [
+          {
+            "constant": false,
+            "id": 5,
+            "name": "UserFactoryAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 30,
+            "src": "79:71:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 3,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "79:7:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "307832363235613036336564376330373135336464633032306233333864633462356265643761333764",
+              "id": 4,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "108:42:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_217780748833025965260754209426581162716602803069_by_1",
+                "typeString": "int_const 217780748833025965260754209426581162716602803069"
+              },
+              "value": "0x2625a063ed7c07153ddc020b338dc4b5bed7a37d"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 10,
+            "name": "user",
+            "nodeType": "VariableDeclaration",
+            "scope": 30,
+            "src": "160:50:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_UserFactory_$92",
+              "typeString": "contract UserFactory"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 6,
+              "name": "UserFactory",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 92,
+              "src": "160:11:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UserFactory_$92",
+                "typeString": "contract UserFactory"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "id": 8,
+                  "name": "UserFactoryAddress",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 5,
+                  "src": "191:18:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                ],
+                "id": 7,
+                "name": "UserFactory",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 92,
+                "src": "179:11:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_contract$_UserFactory_$92_$",
+                  "typeString": "type(contract UserFactory)"
+                }
+              },
+              "id": 9,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": false,
+              "kind": "typeConversion",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "179:31:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UserFactory_$92",
+                "typeString": "contract UserFactory"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 28,
+              "nodeType": "Block",
+              "src": "278:73:0",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 19,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 17,
+                      "name": "answer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12,
+                      "src": "286:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 18,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "296:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "286:11:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 25,
+                  "nodeType": "IfStatement",
+                  "src": "283:42:0",
+                  "trueBody": {
+                    "expression": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 20,
+                          "name": "user",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10,
+                          "src": "304:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_UserFactory_$92",
+                            "typeString": "contract UserFactory"
+                          }
+                        },
+                        "id": 22,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "incrementLevel",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 79,
+                        "src": "304:19:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
+                          "typeString": "function () external"
+                        }
+                      },
+                      "id": 23,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "304:21:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$__$",
+                        "typeString": "tuple()"
+                      }
+                    },
+                    "id": 24,
+                    "nodeType": "ExpressionStatement",
+                    "src": "304:21:0"
+                  }
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 26,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "339:4:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 16,
+                  "id": 27,
+                  "nodeType": "Return",
+                  "src": "332:11:0"
+                }
+              ]
+            },
+            "id": 29,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "levelOne",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12,
+                  "name": "answer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "235:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "235:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "234:13:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "264:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 14,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "264:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "263:14:0"
+            },
+            "scope": 30,
+            "src": "217:134:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 31,
+        "src": "55:299:0"
       }
     ],
-    "src": "0:117:0"
+    "src": "0:355:0"
   },
   "compiler": {
     "name": "solc",
@@ -109,8 +829,20 @@
       "links": {},
       "address": "0x296031462c7f54167838503e55476093a7fca6e6",
       "transactionHash": "0x7a6ef65a24645ba01d98bc16e0f415f255a43593a870e8a7bdede92fc9166773"
+    },
+    "1520647276227": {
+      "events": {},
+      "links": {},
+      "address": "0xf85a756aa8282dc43a1a5e64149e5ebc44b833ea",
+      "transactionHash": "0x684f89fd7cd833d1bc761700c17207078744831eff442b16f156fa7802e9b6d1"
+    },
+    "1520720953250": {
+      "events": {},
+      "links": {},
+      "address": "0xa161dbb32b9143a66d03adf14b7b63dbd27df738",
+      "transactionHash": "0x72c814e2f488b9b9300c62f080ae65e849b20ef3f525cdfcc40e8997990c2496"
     }
   },
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-03-09T22:23:13.993Z"
+  "updatedAt": "2018-03-10T23:08:25.084Z"
 }
