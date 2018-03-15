@@ -1,8 +1,8 @@
 pragma solidity ^0.4.17;
 
-import "./puzzleaccesscontrol.sol";
+import "./ownable.sol";
 
-contract UserFactory is PuzzleAccessControl {  
+contract UserFactory is Ownable {  
 
     struct User {
 	    uint level;
@@ -14,7 +14,8 @@ contract UserFactory is PuzzleAccessControl {
     // a mapping from owner address to their userLevel
     mapping(address => uint) public userLevel; 
 
-    mapping (address => bool) canPlay;
+    // a mapping from levels to the users in them
+    mapping(uint => User[]) levelToUsers;
 
     function assignLevel() public {
         uint level = 1;
@@ -24,7 +25,6 @@ contract UserFactory is PuzzleAccessControl {
 
     function incrementLevel() public {
 	    userLevel[msg.sender]++;
-        canPlay[msg.sender] = false;
     }
 
     function findLevel(address userAddress) public constant returns (uint) {
