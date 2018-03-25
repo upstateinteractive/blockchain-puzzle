@@ -1,11 +1,11 @@
 pragma solidity ^0.4.17;
 
-import "./userfactory.sol";
+import "./UserFactory.sol";
 
 contract Puzzles is UserFactory { 
 
-	// amount a user has to pay to make a guess
-  	uint payToPlayFee = .01 ether;
+      // amount a user has to pay to make a guess
+      uint payToPlayFee = .01 ether;
 
 //    mapping(address => uint) public userAnswer;   
 
@@ -18,25 +18,37 @@ contract Puzzles is UserFactory {
     }
 
     function levelOne(uint answer) public payable {
-		//	userAnswer[msg.sender] = answer;	
+		//	userAnswer[msg.sender] = answer;
+
+			uint currentLevel = findLevel(msg.sender); 
+
 			require(msg.value == payToPlayFee);
-			if (answer == 1) {
+
+			if (currentLevel == 1 && answer == 1) {
 				incrementLevel();
 			}
     }
 
 	function levelTwo(uint answer) public payable {
 		//	userAnswer[msg.sender] = answer;	
+			
+			uint currentLevel = findLevel(msg.sender);		
+
 			require(msg.value == payToPlayFee);
-			if (answer == 2) {
+
+			if (currentLevel ==2 && answer == 2) {
 				incrementLevel();
 			}
 		}
 
 	function finalLevel(uint answer) public payable {
-	//	userAnswer[msg.sender] = answer;	
+	//	userAnswer[msg.sender] = answer;
+
+		uint currentLevel = findLevel(msg.sender);
+	
 		require(msg.value == payToPlayFee);
-		if (answer == 5) {
+
+		if (currentLevel == 10 && answer == 5) {
 			payWinner();
 			incrementLevel();
 		}

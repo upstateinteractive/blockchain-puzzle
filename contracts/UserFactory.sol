@@ -1,6 +1,6 @@
 pragma solidity ^0.4.17;
 
-import "./ownable.sol";
+import "./Ownable.sol";
 
 contract UserFactory is Ownable {  
 
