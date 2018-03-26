@@ -8,6 +8,8 @@ contract UserFactory is Ownable {
 	    uint level;
     }
 
+    event IncrementUserLevel(address indexed from);
+
     // array containing the User struct for all Users
     User[] public users;
 
@@ -24,7 +26,10 @@ contract UserFactory is Ownable {
     }
 
     function incrementLevel() public {
-	    userLevel[msg.sender]++;
+	
+	IncrementUserLevel(msg.sender); 
+	    
+	userLevel[msg.sender]++;
     }
 
     function findLevel(address userAddress) public constant returns (uint) {
