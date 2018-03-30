@@ -26,7 +26,17 @@ contract UserFactory is Ownable {
 	
 	   IncrementUserLevel(msg.sender); 
 
-        userLevel[msg.sender]++;
+        uint level = currentLevel(msg.sender);      
+
+        if (level == 0) {
+
+            userLevel[msg.sender] += 2;
+
+        } else {
+            
+            userLevel[msg.sender]++;
+
+        }
 
     }
 

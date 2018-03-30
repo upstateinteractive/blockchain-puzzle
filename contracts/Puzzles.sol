@@ -24,10 +24,6 @@ contract Puzzles is UserFactory {
 
 			if (level == 0 && answer == 1) {
 
-				// Because users are initialized at level 0 we have to increment their level twice if they guess correctly
-				// I'm sure there's a better way to do this, but it's working for now
-				incrementLevel();
-
 				incrementLevel();
 
 				return true;
