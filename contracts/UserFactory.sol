@@ -19,21 +19,21 @@ contract UserFactory is Ownable {
     // a mapping from levels to the users in them
     mapping(uint => User[]) levelToUsers;
 
-    function assignLevel() public {
-        uint level = 1;
-        userLevel[msg.sender] = level;
-            // uint id = users.push(User(level)) -1;
-    }
+    // Saving this in case we need it later
+    // uint id = users.push(User(level)) -1;
 
-    function incrementLevel() public {
+    function incrementLevel() internal {
 	
-	IncrementUserLevel(msg.sender); 
-	    
-	userLevel[msg.sender]++;
+	   IncrementUserLevel(msg.sender); 
+
+        userLevel[msg.sender]++;
+
     }
 
-    function findLevel(address userAddress) public constant returns (uint) {
+    function currentLevel(address userAddress) public constant returns (uint) {
+
 	    return userLevel[userAddress];
+
     }
 
 }

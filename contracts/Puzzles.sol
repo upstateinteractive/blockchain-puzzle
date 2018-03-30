@@ -18,11 +18,15 @@ contract Puzzles is UserFactory {
 
     function levelOne(uint answer) public payable returns (bool) {
 
-			uint currentLevel = findLevel(msg.sender); 
+			uint level = currentLevel(msg.sender); 
 
 			require(msg.value == payToPlayFee);
 
-			if (currentLevel == 1 && answer == 1) {
+			if (level == 0 && answer == 1) {
+
+				// Because users are initialized at level 0 we have to increment their level twice if they guess correctly
+				// I'm sure there's a better way to do this, but it's working for now
+				incrementLevel();
 
 				incrementLevel();
 
@@ -36,11 +40,11 @@ contract Puzzles is UserFactory {
 
 	function levelTwo(uint answer) public payable returns (bool) {
 			
-			uint currentLevel = findLevel(msg.sender);		
+			uint level = currentLevel(msg.sender);		
 
 			require(msg.value == payToPlayFee);
 
-			if (currentLevel ==2 && answer == 2) {
+			if (level == 2 && answer == 2) {
 
 				incrementLevel();
 
@@ -54,11 +58,11 @@ contract Puzzles is UserFactory {
 
 	function levelSix(uint answer) public payable returns (bool) {
 
-		uint currentLevel = findLevel(msg.sender);
+		uint level = currentLevel(msg.sender);
 	
 		require(msg.value == payToPlayFee);
 
-		if (currentLevel == 6 && answer == 6) {
+		if (level == 6 && answer == 6) {
 
 			payWinner();
 			
