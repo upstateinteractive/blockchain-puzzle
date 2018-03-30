@@ -5,7 +5,11 @@ import "./Ownable.sol";
 contract UserFactory is Ownable {  
 
     struct User {
-	    uint level;
+
+        string name;
+	    
+        uint level;
+
     }
 
     event IncrementUserLevel(address indexed from);
