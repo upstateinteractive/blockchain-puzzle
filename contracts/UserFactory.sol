@@ -1,8 +1,10 @@
 pragma solidity ^0.4.17;
 
 import "./Ownable.sol";
+import "./safemath.sol";
 
 contract UserFactory is Ownable {  
+    using SafeMath for uint;
 
     struct User {
 
@@ -34,11 +36,11 @@ contract UserFactory is Ownable {
 
         if (level == 0) {
 
-            userLevel[msg.sender] += 2;
+            userLevel[msg.sender] = userLevel[msg.sender].add(2);
 
         } else {
             
-            userLevel[msg.sender]++;
+            userLevel[msg.sender] = userLevel[msg.sender].add(1);
 
         }
 
