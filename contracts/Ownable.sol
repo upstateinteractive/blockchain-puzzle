@@ -4,7 +4,7 @@ contract Ownable {
  
   address public owner;
  
-  // he Ownable constructor sets the original `owner` of the contract to the sender
+  // The Ownable constructor sets the original `owner` of the contract to the sender
   function Ownable() public {
     owner = msg.sender;
   }
