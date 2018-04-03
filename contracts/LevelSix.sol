@@ -30,7 +30,7 @@ contract LevelSix is LevelFive {
 		require(msg.value == payToPlayFee);
 
 		if (level == 6 && answer == 6) {
-
+            
 			payWinner();
 			
 		}
