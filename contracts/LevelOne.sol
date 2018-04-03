@@ -14,7 +14,8 @@ contract LevelOne is UserFactory {
 
 			require(msg.value == payToPlayFee);
 
-			if (level == 0 && answer == 1) {
+			if (level == 1 && answer == 1) {
+				removeFromPriorLevel();
 
 				incrementLevel();
 
