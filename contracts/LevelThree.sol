@@ -15,6 +15,7 @@ contract LevelThree is LevelTwo {
 			require(msg.value == payToPlayFee);
 
 			if (level == 3 && answer == 3) {
+				removeFromPriorLevel();
 
 				incrementLevel();
 
