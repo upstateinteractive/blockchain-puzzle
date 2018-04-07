@@ -5,27 +5,21 @@ import "./safemath.sol";
 
 contract UserFactory is Ownable {  
 
-    // @dev Definition of User struct and its grouped list of variables
     using SafeMath for uint;
 
-    struct UserStruct {
+    // @dev Definition of User struct and its grouped list of variables
+    struct User {
         string name;
         uint level;
     }
 
     // event IncrementUserLevel(address indexed from);
 
-    // @dev An array containing the User struct for all Users
-    UserStruct public users;
-
-    // map an address to their UserStruct
-    mapping (address => UserStruct) userStructs;
-
-    // a mapping from userId to the owner address
-    mapping(uint => address) public userToOwner; 
+    // map an address to their User struct
+    mapping (address => User) userStructs;
 
     // a dynamic array of addresses
-    address[] userAddresses;
+    address[] public userAddresses;
 
     // a mapping from level to number of users
     mapping(uint => uint) levelToNumberOfUsers;
@@ -43,12 +37,7 @@ contract UserFactory is Ownable {
 
         uint level = currentLevel(msg.sender); 
 
-        // // push user into User array
-        // uint id = users.push(UserStruct(name, level)) - 1;
-
-        // // set id to user address
-        // userToOwner[id] = msg.sender;
-
+        // increment number of users in level
         levelToNumberOfUsers[level]++;
     }
 
@@ -58,12 +47,16 @@ contract UserFactory is Ownable {
         userStructs[msg.sender].level++;
 
         uint level = currentLevel(msg.sender); 
+
+        // increment number of users in new level
         levelToNumberOfUsers[level]++;
 
     }
 
     function removeFromPriorLevel() internal {
         uint level = currentLevel(msg.sender); 
+
+        // decrement number of users in prior level. This is fired before the incrementLevel function
         levelToNumberOfUsers[level]--;
     }
 
